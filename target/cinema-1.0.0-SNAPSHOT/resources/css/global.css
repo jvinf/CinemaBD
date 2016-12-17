@@ -1,0 +1,411 @@
+@CHARSET "ISO-8859-1";
+html{
+    height: 100%;
+}
+
+body{
+    /*background: no-repeat scroll center top lavender;*/
+    background: no-repeat scroll center top white;
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 12px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+image{
+    border: inherit;
+    margin: 0px;
+    padding: 0px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="textarea"] {
+    padding: 4px !important;
+    color: #212121 !important;
+    border: 1px solid #666 !important;
+    box-shadow: none !important;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="textarea"]:focus{
+    box-shadow: 0px 0px 5px #0B7199 !important;
+}
+
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="textarea"]:disabled{
+    background-color: gainsboro!important;
+    opacity: 1.0 !important;
+}
+
+input[type="text"].ui-state-error,
+input[type="password"].ui-state-error,
+input[type="textarea"].ui-state-error,
+div.ui-state-error{
+    border: 1px solid #cd0a0a !important;
+}
+
+.ui-state-disabled{
+    background-color: gainsboro !important;
+    opacity: 1.0 !important;
+}
+
+.ui-selectonemenu.ui-state-disabled .ui-selectonemenu-label {
+    background-color: gainsboro !important;
+    opacity: 1.0 !important;
+}
+
+select{
+    height: 25px;
+}
+
+select:disabled{
+    background-color: gainsboro !important;
+    opacity: 1.0 !important;
+}
+
+.ui-corner-all {
+    border-radius: 0px !important;
+}
+
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif !important;
+    font-size: 12px !important;
+}
+
+/* COMBO-BOX */
+.ui-selectonemenu {
+    border: 1px solid #666 !important;
+    /*border: none !important;*/
+}
+
+.ui-selectonemenu .ui-inputfield {
+    background: none repeat scroll 0% 0% #FFF;
+    box-shadow: none;
+    color: #212121;
+}
+
+.ui-selectonemenu-label{
+    border: none !important;
+}
+/* FIM COMBO-BOX*/
+
+/* AUTO COMPLETE */
+.ui-autocomplete .ui-autocomplete-input {
+    background: none repeat scroll 0% 0% #FFF;
+    padding-top: 4px;
+    color: #212121;
+    border: 1px solid #666;
+    box-shadow: none;
+}
+
+.ui-autocomplete-input.ui-inputfield.ui-state-focus {
+    box-shadow: 0px 0px 5px #0B7199;
+}
+/* FIM COMPLETE*/
+
+/* ESCURIDAO DO MODAL */
+.ui-widget-overlay {
+    opacity: 0.6;
+}
+/* FIM ESCURIDAO DO MODAL */
+
+/* FILTER DATA GRID */
+.ui-widget-header .ui-inputfield, .ui-widget-content .ui-inputfield{
+    /* background: none repeat scroll 0% 0% #FFF; */
+    padding-top: 4px;
+    color: #212121;
+    border: 1px solid #666;
+    box-shadow: none;
+}
+.ui-inputfield.ui-state-focus, .ui-widget-content .ui-inputfield.ui-state-focus, .ui-widget-header .ui-inputfield.ui-state-focus{
+    box-shadow: 0px 0px 5px #0B7199;
+}
+/* FIM FILTER DATA GRID */
+
+/* PAGINADOR TOP DATA GRID */
+div.ui-paginator.ui-paginator-top.ui-widget-header.ui-corner-top{
+    display: none;
+}
+
+/* DATA GRID ZEBRADO */
+.ui-datatable .ui-datatable-data .even-row td{
+    background-color: gainsboro;
+}
+.ui-datatable .ui-datatable-data .odd-row td{
+    background-color: #FFF;
+}
+.even-row{
+    background-color: gainsboro;
+}
+.odd-row{
+    background-color: #FFF;
+}
+
+/* BOTAO TECLADO VIRTUAL */
+.keypad-key {
+    min-width: 48px !important;
+    height: 48px !important;
+    font-size: 14px !important;
+}
+
+.left-top {
+    vertical-align: top;
+    float: left;
+}
+
+.left-middle {
+    vertical-align: middle;
+    float: left;
+}
+
+.right-top {
+    vertical-align: top;
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.padding10 {
+    padding: 10px;
+}
+
+.buttonLink{
+    cursor: pointer;
+}
+
+.buttonLink:hover{
+    box-shadow: 0px 0px 5px #FFF;
+}
+
+.buttonLink:active{
+    box-shadow: 0px 0px 5px #FFF;
+    position: relative;
+    left: 2px;
+    top: 2px;
+}
+
+div#header{
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    top: 0px;
+}
+
+div#content{
+    /*    height: 87%;
+        background-image: linear-gradient(to bottom, #EBF2F5, #82B3C5 130%);*/
+}
+
+div#footer{
+    clear:both;
+    text-align: center;
+    color: #666;
+    min-height: 60px;
+}
+
+div#footer div#footerLabel{
+    border-top: 1px solid #CCC;
+    min-height: 39px;
+    top: 20px;
+    position: relative;
+    background: no-repeat scroll center top #fff;
+}
+
+.data_table{
+    border: 1px solid #A6C9E2;
+    border-radius: 5px;
+}
+
+/* Definir mesmo tamanho para as linhas da tabela COM ou SEM botões */
+.dt_row_painel{
+    height: 49px !important;
+}
+
+/* altura mínima da linha para que o scroll da tabela não "invada" a última coluna e desalinhe as anteriores */
+.dt_row{
+    height: 25px !important;
+}
+
+.labelForm{
+    display: inline-block;
+    margin: 2px;
+}
+
+.labelFormRequired{
+    display: inline-block;
+    margin: 2px;
+    color: red;
+}
+
+.labelFormRequired .labelForm{
+    color: black;
+}
+
+.labelBoldRed{
+    color: red;
+    font-weight: bold;
+}
+
+.labelBoldBlue{
+    color: blue;
+    font-weight: bold;
+}
+
+.labelBoldBlack{
+    color: black;
+    font-weight: bold;
+}
+
+.labelBoldWhite{
+    color: white;
+    font-weight: bold !important;
+}
+
+.labelRed{
+    color: red !important;
+}
+
+.labelBlue{
+    color: blue !important;
+}
+
+.labelBlack{
+    color: black;
+}
+
+.labelGreen{
+    color: green !important;
+}
+
+.labelOrange{
+    color: orange !important;
+}
+
+.buttonForm{
+    display: inline-block;
+    margin: 2px;
+    height: 40px;
+}
+
+.buttonFormIcon{
+    display: inline-block;
+    margin: 2px;
+    height: 36px;
+    width: 36px;
+}
+
+.buttonFormIconContent{
+    display: inline-block;
+    margin: 2px;
+    height: 30px;
+    width: 28px;
+}
+
+.inputForm{
+    margin: 2px;
+}
+
+.panelForm{
+    width: 80%;
+    margin: 90px auto 0px;
+}
+
+.headerPanelForm{
+    width: 80%;
+    margin: 5px auto 0px;
+    height: 30px;
+}
+
+.headerPanelFormIcon{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.labelHeaderPanelForm{
+    font-size: 14px !important;
+    color: #0078AE;
+    margin-top: 3px;
+}
+
+.labelHeaderPanelFormTitle{
+    font-size: 14px !important;
+    color: #0078AE;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.labelHeaderPanelFormTitleBig{
+    font-size: 16px !important;
+    color: #0078AE;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.labelHeaderPanel{
+    font-size: 14px !important;
+    color: #0078AE;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.headerPanelFormFixed{
+    width: 100%;
+    position: fixed;
+    background-color: #ffffff;
+    margin: 0px auto 0px;
+    top: 50px;
+    z-index: 998;
+}
+
+.panelFormButton{
+    margin: 8px auto 0px;
+    width: 953px;
+    background-color: lavender;
+    border: 1px solid lavender;
+}
+
+/* PRIMEFACES SOBRESCRITO */
+.ui-panel {
+    padding: 0px !important;
+}
+
+.ui-menu .ui-menuitem-text {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.ui-button-text-icon-left .ui-button-text {
+    padding: .3em 1em .3em 3.1em;
+}
+
+.ui-datatable-scrollable-body::-webkit-scrollbar-thumb{
+    background-color: silver;
+}
+
+.ui-menu .ui-menu-parent .ui-menu-child .ui-menuitem-text {
+    color: black !important;
+}

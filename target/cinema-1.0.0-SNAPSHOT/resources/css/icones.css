@@ -1,0 +1,582 @@
+@CHARSET "ISO-8859-1";
+
+/* ICONES DOS BOTOES USADOS PELO PRIMEFACES */
+.icone_limpar{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/limpar.png") !important;
+}
+.icone_limpar_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/limpar.png") !important;
+}
+
+.icone_salvar{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/salvar.png") !important;
+}
+
+.icone_salvar_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/salvar.png") !important;
+}
+
+.icone_enviar_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/enviar.png") !important;
+}
+
+.icone_incluir{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/incluir.png") !important;
+}
+
+.icone_incluir_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/incluir.png") !important;
+}
+
+.icone_alterar{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/alterar.png") !important;
+}
+
+.icone_alterar_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/alterar.png") !important;
+}
+
+.icone_excluir{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/excluir.png") !important;
+}
+
+.icone_excluir_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/excluir.png") !important;
+}
+
+.icone_cancelar{
+    width: 24px;
+    height: 24px;
+    left: 40% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/cancelar.png") !important;
+}
+
+.icone_imprimir{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/imprimir.png") !important;
+}
+
+.icone_imprimir_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/imprimir.png") !important;
+}
+
+.icone_voltar{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/voltar.png") !important;
+}
+
+.icone_voltar_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/voltar.png") !important;
+}
+
+.icone_pesquisar{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/pesquisar.png") !important;
+}
+
+.icone_pesquisar_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/pesquisar.png") !important;
+}
+
+.icone_faturar_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/faturar.png") !important;
+}
+
+.icone_listarcadastrar{
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/listarcadastrar.png") !important;
+}
+
+.icone_ok{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/ok.png") !important;
+}
+
+.icone_ok_label{
+    width: 24px;
+    height: 24px;
+    left: 13% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/ok.png") !important;
+}
+
+.icone_usuario{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/usuario.png") !important;
+}
+
+.icone_usuario_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/usuario.png") !important;
+}
+
+.icone_pdf{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/pdf.png") !important;
+}
+
+.icone_pdf_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/pdf.png") !important;
+}
+
+.icone_primeiro{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/primeiro.png") !important;
+}
+
+.icone_primeiro_label{
+    width: 24px;
+    height: 24px;
+    left: 26% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/primeiro.png") !important;
+}
+
+.icone_interrogacao{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/interrogacao.png") !important;
+}
+
+.icone_interrogacao_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/interrogacao.png") !important;
+}
+
+.icone_email{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/email.png") !important;
+}
+
+.icone_email_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/email.png") !important;
+}
+
+.icone_anexo{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/atachar.png") !important;
+}
+
+.icone_anexo_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/atachar.png") !important;
+}
+
+.icone_mais{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/mais.png") !important;
+}
+
+.icone_menos{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/menos.png") !important;
+}
+
+.icone_download{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/download.png") !important;
+}
+
+.icone_download_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/download.png") !important;
+}
+
+.icone_pesquisar_pessoas{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/pesquisarPessoas.png") !important;
+}
+
+.icone_bloquear{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/bloquear.png") !important;
+}
+
+.icone_bloquear_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/bloquear.png") !important;
+}
+
+.icone_desbloquear{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/desbloquear.png") !important;
+}
+
+.icone_desbloquear_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/desbloquear.png") !important;
+}
+
+.icone_prestador_nao_conv{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/prestadorNaoConv.png") !important;
+}
+
+.icone_prestador_nao_conv_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/prestadorNaoConv.png") !important;
+}
+
+.icone_procedimento_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/procedimento.png") !important;
+}
+
+.icone_honorario_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/honorario.png") !important;
+}
+
+.icone_servhosp_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/servHosp.png") !important;
+}
+
+.icone_matmed_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/medicamento.png") !important;
+}
+
+.icone_exame_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/exames.png") !important;
+}
+
+.icone_declaracao_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/folha_verde.png") !important;
+}
+
+.icone_matricula{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/matricula.png") !important;
+}
+
+.icone_matricula_label{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/matricula.png") !important;
+}
+
+.icone_senha{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/botoes/senha.png") !important;
+}
+
+/***********************************************************************************************************/
+/***********************************************************************************************************/
+/********************************* ICONES DO MENU ***********************************************************/
+/***********************************************************************************************************/
+/***********************************************************************************************************/
+
+.icone_painel_guias{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/preview.png") !important;
+}
+
+.icone_sp_sadt{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/exames.png") !important;
+}
+
+.icone_honorario{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/honorario.png") !important;
+}
+
+.icone_odontologia{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/odontologia.png") !important;
+}
+
+.icone_internacao{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/internacao.png") !important;
+}
+
+.icone_consulta{
+    width: 24px;
+    height: 24px;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/consulta.png") !important;
+}
+
+.icone_operadores{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/operadores.png") !important;
+}
+
+.icone_prorrogacao_internacao{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/prorrogacao-inter.png") !important;
+}
+
+.icone_arquivo_tiss{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/arquivo_tiss.png") !important;
+}
+
+.icone_faturamento{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/faturamento.png") !important;
+}
+
+.icone_tabela_dominios{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/tabela.png") !important;
+}
+
+.icone_arquivos_enviados{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/arquivos_enviados.png") !important;
+}
+
+.icone_contas_medicas{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/contas_medicas.png") !important;
+}
+
+.icone_pagamento_medico{
+    width: 24px;
+    height: 24px;
+    left: 37% !important;
+    top: 37% !important;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/pagamento_medico.png") !important;
+}
