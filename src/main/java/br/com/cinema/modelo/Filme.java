@@ -28,8 +28,8 @@ public class Filme implements Serializable {
     private Date dataEstreia;
     private Integer duracao;
     private String estudio;
-    private Classificacao idClassificacao;
-    private Genero idGenero;
+    private Classificacao classificacao;
+    private Genero genero;
 
     @Id
     @Column(name = "idfilme")
@@ -140,22 +140,21 @@ public class Filme implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "idclassificacao")
-    public Classificacao getIdClassificacao() {
-        return idClassificacao;
+    public Classificacao getClassificacao() {
+        return classificacao;
     }
 
-    public void setIdClassificacao(Classificacao idClassificacao) {
-        this.idClassificacao = idClassificacao;
+    public void setClassificacao(Classificacao classificacao) {
+        this.classificacao = classificacao;
     }
 
     @ManyToOne
     @JoinColumn(name = "idgenero")
-    public Genero getIdGenero() {
-        return idGenero;
+    public Genero getGenero() {
+        return genero;
     }
 
-    public void setIdGenero(Genero idGenero) {
-        this.idGenero = idGenero;
+    public void setGenero(Genero genero) {
+        this.genero = genero;
     }
-
 }

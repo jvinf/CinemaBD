@@ -330,7 +330,7 @@ div#footer div#footerLabel{
 
 .panelForm{
     width: 80%;
-    margin: 90px auto 0px;
+    margin: 110px auto 0px;
 }
 
 .headerPanelForm{
@@ -352,7 +352,7 @@ div#footer div#footerLabel{
 
 .labelHeaderPanelFormTitle{
     font-size: 14px !important;
-    color: #0078AE;
+    color: black;
     font-weight: bold;
     margin-top: 3px;
 }
@@ -376,7 +376,7 @@ div#footer div#footerLabel{
     position: fixed;
     background-color: #ffffff;
     margin: 0px auto 0px;
-    top: 50px;
+    top: 70px;
     z-index: 998;
 }
 
@@ -390,12 +390,15 @@ div#footer div#footerLabel{
 /* PRIMEFACES SOBRESCRITO */
 .ui-panel {
     padding: 0px !important;
+    border-color: #cdd5da;
 }
 
 .ui-menu .ui-menuitem-text {
     margin-left: 10px;
     margin-top: 5px;
     font-size: 14px;
+    color: white !important;
+    font-weight: bold;
 }
 
 .ui-button-text-icon-left .ui-button-text {
@@ -408,4 +411,5 @@ div#footer div#footerLabel{
 
 .ui-menu .ui-menu-parent .ui-menu-child .ui-menuitem-text {
     color: black !important;
+    font-weight: normal;
 }

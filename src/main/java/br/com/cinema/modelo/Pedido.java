@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,7 +26,6 @@ public class Pedido implements Serializable {
         this.id = id;
     }
 
-    @OneToOne
     @Column(name = "idingresso")
     public Ingresso getIdIngresso() {
         return idIngresso;
