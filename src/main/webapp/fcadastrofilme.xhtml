@@ -77,7 +77,7 @@
                         <h:selectBooleanCheckbox id="sbcLegendado" value="#{ccadastroFilme.filme.legendado}" styleClass="labelForm" style="margin-top: 10px;"/>
                         <h:panelGroup layout="block" styleClass="clear"/>
                         <h:panelGroup layout="block" styleClass="left">
-                            <h:inputText id="txiAnoLancamento" value="" required="true" requiredMessage="Informe o Ano de Lançamento."
+                            <h:inputText id="txiAnoLancamento" value="#{ccadastroFilme.filme.anoLancamento}" required="true" requiredMessage="Informe o Ano de Lançamento."
                                          styleClass="inputForm" style="width: 130px;"/>
                             <h:panelGroup>
                                 <p:calendar id="txiDataEstreia" label="Data de Estreia" value="#{ccadastroFilme.filme.dataEstreia}" navigator="true" showOn="button"
@@ -118,7 +118,7 @@
 
                 <h:panelGrid columns="1" style="margin-left: 45%;">
                     <p:commandButton delay="300" value="Salvar" icon="icone_salvar_label" styleClass="buttonForm"
-                                     update=":fcadastrofilme:pngFgCadastroFilme :dlgMensagens"
+                                     update=":fcadastrofilme:pngFgCadastroFilme :dlgMensagens" action="#{ccadastroFilme.salvar}"
                                      process="@this :fcadastrofilme:pngFgCadastroFilme"/>
                 </h:panelGrid>
                 <h:panelGroup layout="block" styleClass="clear"/>

@@ -19,7 +19,7 @@ public class Filme implements Serializable {
     private Integer id;
     private String nomeOriginal;
     private String nomeEmCartaz;
-    private Date anoLancamento;
+    private Integer anoLancamento;
     private String nomeDiretor;
     private boolean emCartaz;
     private String sinopse;
@@ -61,12 +61,11 @@ public class Filme implements Serializable {
     }
 
     @Column(name = "anolancamento")
-    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
-    public Date getAnoLancamento() {
+    public Integer getAnoLancamento() {
         return anoLancamento;
     }
 
-    public void setAnoLancamento(Date anoLancamento) {
+    public void setAnoLancamento(Integer anoLancamento) {
         this.anoLancamento = anoLancamento;
     }
 

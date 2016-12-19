@@ -58,7 +58,7 @@
             </h:form>
             <h:panelGroup id="dlgMensagens">
                 <div class="ui-fluid">
-                    <p:dialog id="dlgMsgGlobal" widgetVar="varDlgMsgGlobal" header="LEIA COM ATENÇÃO" visible="#{cgeral.existeMensagem()}"
+                    <p:dialog id="dlgMsgGlobal" widgetVar="varDlgMsgGlobal" header="LEIA COM ATENÇÃO" 
                               maximizable="false" closable="true" resizable="false" modal="true" closeOnEscape="true" responsive="true"
                               styleClass="mqDialogMsgGlobal" fitViewport="true">
                         <p:panel style="height: 84%; overflow:auto;">
@@ -69,7 +69,6 @@
                         </h:form>
                     </p:dialog>
                 </div>
-                <p:growl id="grwMsgGlobal" showDetail="false" autoUpdate="false" rendered="#{cgeral.existeMensagemGrowl()}"/>
                 <script>
                     /* SCRIPT PARA MOSTRAR JANELA QUANDO TEM MSG DE VALIDATION DE TELA E NAO TEM MSG VALIDATION NO BEAN */
                     var growl = $('#dlgMensagens').find('#grwMsgGlobal');

@@ -1,10 +1,12 @@
 package br.com.cinema.controle;
 
+import br.com.cinema.jsf.FacesUtil;
 import br.com.cinema.modelo.Classificacao;
 import br.com.cinema.modelo.Filme;
 import br.com.cinema.modelo.Genero;
 import br.com.cinema.repositorio.ClassificacaoRepositorio;
 import br.com.cinema.repositorio.GeneroRepositorio;
+import br.com.cinema.service.CadastroFilmeService;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -19,6 +21,8 @@ public class CcadastroFilme {
     private GeneroRepositorio genero;
     @Inject
     private ClassificacaoRepositorio classificacao;
+    @Inject
+    private CadastroFilmeService cadastroFilmeService;
 
     private Filme filme;
     private List<Genero> listaGeneros;
@@ -36,7 +40,9 @@ public class CcadastroFilme {
     }
 
     public void salvar() {
-
+        cadastroFilmeService.salvar(filme);
+        limpar();
+        FacesUtil.addInfoMessage("Filme cadastrado com sucesso!");
     }
 
     /* GETS E SETS */
