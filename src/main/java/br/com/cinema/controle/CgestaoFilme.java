@@ -14,8 +14,6 @@ public class CgestaoFilme {
 
     @Inject
     private FilmeRepositorio filmeRepositorio;
-    @Inject
-    private CcadastroFilme ccadastroFilme;
 
     private boolean flagShow;
     private boolean flagShowIncluir;
