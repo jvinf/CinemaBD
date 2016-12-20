@@ -24,34 +24,69 @@ public class CcadastroFilme {
     @Inject
     private CadastroFilmeService cadastroFilmeService;
 
+    private boolean flagShow;
     private Filme filme;
+    private Filme filmeSel;
     private List<Genero> listaGeneros;
     private List<Classificacao> listaClassificacao;
 
     @PostConstruct
     public void onCreate() {
+        setFlagShow(true);
+        limpar();
+    }
+
+    public void limpar() {
         filme = new Filme();
         listaGeneros = genero.buscarGeneros();
         listaClassificacao = classificacao.buscarClassificacoes();
     }
 
-    public void limpar() {
-        filme = new Filme();
-    }
-
     public void salvar() {
         cadastroFilmeService.salvar(filme);
         limpar();
-        FacesUtil.addInfoMessage("Filme cadastrado com sucesso!");
+        FacesUtil.addInfoMessage("Filme salvo com sucesso!");
+    }
+
+    public void alterar() {
+        if (filmeSel != null) {
+            filme = filmeSel;
+        }
+    }
+
+    public void excluir() {
+        if (filmeSel != null) {
+            cadastroFilmeService.remover(filmeSel);
+            limpar();
+            FacesUtil.addInfoMessage("Filme excluído com sucesso!");
+        } else {
+            FacesUtil.addErrorMessage("Selecione um filme para excluir!");
+        }
     }
 
     /* GETS E SETS */
+    public boolean isFlagShow() {
+        return flagShow;
+    }
+
+    public void setFlagShow(boolean flagShow) {
+        this.flagShow = flagShow;
+    }
+
     public Filme getFilme() {
         return filme;
     }
 
     public void setFilme(Filme filme) {
         this.filme = filme;
+    }
+
+    public Filme getFilmeSel() {
+        return filmeSel;
+    }
+
+    public void setFilmeSel(Filme filmeSel) {
+        this.filmeSel = filmeSel;
     }
 
     public List<Genero> getListaGeneros() {

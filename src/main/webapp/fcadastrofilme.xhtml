@@ -4,125 +4,120 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:p="http://primefaces.org/ui"
-                template="/WEB-INF/templates/tpprincipal.xhtml">
+                xmlns:p="http://primefaces.org/ui">
 
-    <ui:define name="content">
-        <h:form id="fcadastrofilme" onkeypress="cancelaSubmitEventEnter(event);">
-            <h:panelGroup layout="block" styleClass="headerPanelFormFixed">
-                <h:panelGroup layout="block" styleClass="headerPanelForm">
-                    <h:outputLabel value="Cadastro de Filme" styleClass="left labelHeaderPanelFormTitle" style="margin-left: 5px;"/>
-                </h:panelGroup>
+    <h:form id="fcadastrofilme" onkeypress="cancelaSubmitEventEnter(event);">
+        <h:panelGroup layout="block" styleClass="headerPanelFormFixed">
+            <h:panelGroup layout="block" styleClass="headerPanelForm">
+                <h:outputLabel value="Cadastro de Filme" styleClass="left labelHeaderPanelFormTitle" style="margin-left: 5px;"/>
+            </h:panelGroup>
+        </h:panelGroup>
+
+        <p:panel id="pnlFgCadastroFilme" styleClass="panelForm">
+            <h:panelGroup id="pngFgCadastroFilme">
+                <p:focus id="fcsPngFgCadastroFilme" for="txiNomeOriginal"/>
+                <p:panel id="pnlDadosFilme">
+                    <h:outputLabel value="*" styleClass="labelFormRequired">
+                        <h:outputLabel value="Nome Original:" for="txiNomeOriginal" style="width: 500px;" styleClass="labelForm"/>
+                    </h:outputLabel>
+                    <h:outputLabel value="*" styleClass="labelFormRequired" style="margin-left: 10px;">
+                        <h:outputLabel value="Nome em Cartaz:" for="txiNomeCartaz" style="width: 500px;" styleClass="labelForm"/>
+                    </h:outputLabel>    
+                    <h:panelGroup layout="block" styleClass="clear"/>
+                    <h:inputText id="txiNomeOriginal" value="#{ccadastroFilme.filme.nomeOriginal}" required="true"
+                                 styleClass="inputForm" style="width: 500px;" requiredMessage="Informe o Nome Original."/>
+                    <h:inputText id="txiNomeCartaz" value="#{ccadastroFilme.filme.nomeEmCartaz}" required="true"
+                                 styleClass="inputForm" style="width: 500px; margin-left: 10px;" requiredMessage="Informe o Nome em Cartaz."/>
+                    <h:panelGroup layout="block" styleClass="clear"/>
+
+                    <h:outputLabel value="*" styleClass="labelFormRequired">
+                        <h:outputLabel value="Diretor(es):" for="txiNomeDiretor" style="width: 500px;" styleClass="labelForm"/>
+                    </h:outputLabel>
+                    <h:outputLabel value="*" styleClass="labelFormRequired" style="margin-left: 10px;">
+                        <h:outputLabel value="Gênero:" for="cbxGenero" style="width: 240px;" styleClass="labelForm"/>
+                    </h:outputLabel>   
+                    <h:outputLabel value="*" styleClass="labelFormRequired">
+                        <h:outputLabel value="Classificação:" for="cbxClassificacao" style="width: 240px;" styleClass="labelForm"/>
+                    </h:outputLabel>
+                    <h:panelGroup layout="block" styleClass="clear"/>
+                    <h:panelGroup layout="block" styleClass="left">
+                        <h:inputText id="txiNomeDiretor" value="#{ccadastroFilme.filme.nomeDiretor}" required="true"
+                                     styleClass="inputForm" style="width: 500px;" requiredMessage="Informe o Nome do Diretor."/>
+                    </h:panelGroup>
+                    <h:panelGroup layout="block" styleClass="left">
+                        <p:selectOneMenu id="cbxGenero" style="width: 227px; margin-left: 10px;" styleClass="inputForm" converter="GeneroConverter"
+                                         value="#{ccadastroFilme.filme.genero}" required="true" requiredMessage="Informe o Gênero.">
+                            <f:selectItem itemLabel="SELECIONE"/>
+                            <f:selectItems value="#{ccadastroFilme.listaGeneros}" var="genero" itemLabel="#{genero.descricao}" itemValue="#{genero}"/>
+                        </p:selectOneMenu>
+                        <p:selectOneMenu id="cbxClassificacao" style="width: 227px;" styleClass="inputForm" converter="ClassificacaoConverter"
+                                         value="#{ccadastroFilme.filme.classificacao}" required="true" requiredMessage="Informe a Classificação.">
+                            <f:selectItem itemLabel="SELECIONE"/>
+                            <f:selectItems value="#{ccadastroFilme.listaClassificacao}" var="classificacao" itemLabel="#{classificacao.descricao}" 
+                                           itemValue="#{classificacao}"/>
+                        </p:selectOneMenu>
+                    </h:panelGroup>
+
+                    <h:outputLabel value="*" styleClass="labelFormRequired">
+                        <h:outputLabel value="Ano de Lançamento:" for="txiAnoLancamento" style="width: 130px;" styleClass="labelForm"/>
+                    </h:outputLabel>
+                    <h:outputLabel value="Data de Estreia:" for="txiDataEstreia" style="width: 170px;" styleClass="labelForm"/>
+                    <h:outputLabel value="*" styleClass="labelFormRequired">
+                        <h:outputLabel value="Duração (em minutos):" for="txiDuracao" style="width: 150px;" styleClass="labelForm"/>
+                    </h:outputLabel>
+                    <h:outputLabel value="*" styleClass="labelFormRequired">
+                        <h:outputLabel value="Estudio:" for="txiEstudio" style="width: 200px;" styleClass="labelForm"/>
+                    </h:outputLabel>   
+                    <h:outputLabel value="*" styleClass="labelFormRequired">
+                        <h:outputLabel value="Idioma:" for="txiIdioma" style="width: 146px;" styleClass="labelForm"/>
+                    </h:outputLabel>   
+                    <h:panelGroup layout="block" styleClass="clear"/>
+                    <h:panelGroup layout="block" styleClass="left">
+                        <h:inputText id="txiAnoLancamento" value="#{ccadastroFilme.filme.anoLancamento}" required="true" requiredMessage="Informe o Ano de Lançamento."
+                                     styleClass="inputForm" style="width: 130px;"/>
+                        <h:panelGroup>
+                            <p:calendar id="txiDataEstreia" label="Data de Estreia" value="#{ccadastroFilme.filme.dataEstreia}" navigator="true" showOn="button"
+                                        mask="true" pattern="dd/MM/yyyy" locale="pt" readonlyInput="true" styleClass="inputForm">
+                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                            </p:calendar>
+                            <script>
+                                // ACERTA O TAMANHO DO CALENDAR PARA FUNCIONAR NO WIN XP COM CHROME
+                                var pcal = $('#fcadastrofilme\\:txiDataEstreia_input');
+                                if (pcal.length !== 0) {
+                                    pcal.css({"width": "130px"});
+                                    pcal.css({"margin-top": "2px"});
+                                }
+                            </script>
+                        </h:panelGroup>
+                        <h:inputText id="txiDuracao" value="#{ccadastroFilme.filme.duracao}" required="true"
+                                     styleClass="inputForm" style="width: 150px;" requiredMessage="Informe a Duração"/>
+                        <h:inputText id="txiEstudio" value="#{ccadastroFilme.filme.estudio}" required="true"
+                                     styleClass="inputForm" style="width: 200px;" requiredMessage="Informe o Estúdio."/>
+                        <h:inputText id="txiIdioma" value="#{ccadastroFilme.filme.idioma}" required="true"
+                                     styleClass="inputForm" style="width: 190px;" requiredMessage="Informe o Idioma."/>
+                        <h:outputLabel value="Legendado:" for="sbcLegendado" style="width: 100px; margin-left: 10px; margin-top: 10px;" styleClass="labelForm"/>
+                        <h:selectBooleanCheckbox id="sbcLegendado" value="#{ccadastroFilme.filme.legendado}" styleClass="labelForm" style="margin-top: 10px;"/>
+                    </h:panelGroup>
+                    <h:panelGroup layout="block" styleClass="clear"/>
+
+                    <h:outputLabel value="*" styleClass="labelFormRequired">
+                        <h:outputLabel value="Sinopse:" for="txaSinopse" styleClass="labelForm"/>
+                    </h:outputLabel>
+                    <h:panelGroup layout="block" styleClass="clear"/>
+                    <p:inputTextarea id="txaSinopse" rows="4" cols="200" autoResize="true" value="#{ccadastroFilme.filme.sinopse}"
+                                     styleClass="inputForm" maxlength="1000" style="width: 98%;" required="true"
+                                     counter="display" counterTemplate="{0} caracteres restantes." requiredMessage="Informe a Sinopse."/>
+                    <h:panelGroup layout="block" styleClass="clear"/>
+                    <h:outputText id="display"/>
+                </p:panel>
             </h:panelGroup>
 
-            <p:panel id="pnlFgCadastroFilme" styleClass="panelForm">
-                <h:panelGroup id="pngFgCadastroFilme">
-                    <p:focus id="fcsPngFgCadastroFilme" for="txiNomeOriginal"/>
-                    <p:panel id="pnlDadosFilme">
-                        <h:outputLabel value="*" styleClass="labelFormRequired">
-                            <h:outputLabel value="Nome Original:" for="txiNomeOriginal" style="width: 500px;" styleClass="labelForm"/>
-                        </h:outputLabel>
-                        <h:outputLabel value="*" styleClass="labelFormRequired" style="margin-left: 10px;">
-                            <h:outputLabel value="Nome em Cartaz:" for="txiNomeCartaz" style="width: 500px;" styleClass="labelForm"/>
-                        </h:outputLabel>    
-                        <h:panelGroup layout="block" styleClass="clear"/>
-                        <h:inputText id="txiNomeOriginal" value="#{ccadastroFilme.filme.nomeOriginal}" required="true"
-                                     styleClass="inputForm" style="width: 500px;" requiredMessage="Informe o Nome Original."/>
-                        <h:inputText id="txiNomeCartaz" value="#{ccadastroFilme.filme.nomeEmCartaz}" required="true"
-                                     styleClass="inputForm" style="width: 500px; margin-left: 10px;" requiredMessage="Informe o Nome em Cartaz."/>
-                        <h:panelGroup layout="block" styleClass="clear"/>
-
-                        <h:outputLabel value="*" styleClass="labelFormRequired">
-                            <h:outputLabel value="Diretor(es):" for="txiNomeDiretor" style="width: 500px;" styleClass="labelForm"/>
-                        </h:outputLabel>
-                        <h:outputLabel value="*" styleClass="labelFormRequired" style="margin-left: 10px;">
-                            <h:outputLabel value="Gênero:" for="cbxGenero" style="width: 240px;" styleClass="labelForm"/>
-                        </h:outputLabel>   
-                        <h:outputLabel value="*" styleClass="labelFormRequired">
-                            <h:outputLabel value="Classificação:" for="cbxClassificacao" style="width: 240px;" styleClass="labelForm"/>
-                        </h:outputLabel>
-                        <h:panelGroup layout="block" styleClass="clear"/>
-                        <h:panelGroup layout="block" styleClass="left">
-                            <h:inputText id="txiNomeDiretor" value="#{ccadastroFilme.filme.nomeDiretor}" required="true"
-                                         styleClass="inputForm" style="width: 500px;" requiredMessage="Informe o Nome do Diretor."/>
-                        </h:panelGroup>
-                        <h:panelGroup layout="block" styleClass="left">
-                            <p:selectOneMenu id="cbxGenero" style="width: 227px; margin-left: 10px;" styleClass="inputForm" converter="GeneroConverter"
-                                             value="#{ccadastroFilme.filme.genero}" required="true" requiredMessage="Informe o Gênero.">
-                                <f:selectItem itemLabel="SELECIONE"/>
-                                <f:selectItems value="#{ccadastroFilme.listaGeneros}" var="genero" itemLabel="#{genero.descricao}" itemValue="#{genero}"/>
-                            </p:selectOneMenu>
-                            <p:selectOneMenu id="cbxClassificacao" style="width: 227px;" styleClass="inputForm" converter="ClassificacaoConverter"
-                                             value="#{ccadastroFilme.filme.classificacao}" required="true" requiredMessage="Informe a Classificação.">
-                                <f:selectItem itemLabel="SELECIONE"/>
-                                <f:selectItems value="#{ccadastroFilme.listaClassificacao}" var="classificacao" itemLabel="#{classificacao.descricao}" 
-                                               itemValue="#{classificacao}"/>
-                            </p:selectOneMenu>
-                        </h:panelGroup>
-
-                        <h:outputLabel value="*" styleClass="labelFormRequired">
-                            <h:outputLabel value="Ano de Lançamento:" for="txiAnoLancamento" style="width: 130px;" styleClass="labelForm"/>
-                        </h:outputLabel>
-                        <h:outputLabel value="Data de Estreia:" for="txiDataEstreia" style="width: 170px;" styleClass="labelForm"/>
-                        <h:outputLabel value="*" styleClass="labelFormRequired">
-                            <h:outputLabel value="Duração (em minutos):" for="txiDuracao" style="width: 150px;" styleClass="labelForm"/>
-                        </h:outputLabel>
-                        <h:outputLabel value="*" styleClass="labelFormRequired">
-                            <h:outputLabel value="Estudio:" for="txiEstudio" style="width: 200px;" styleClass="labelForm"/>
-                        </h:outputLabel>   
-                        <h:outputLabel value="*" styleClass="labelFormRequired">
-                            <h:outputLabel value="Idioma:" for="txiIdioma" style="width: 146px;" styleClass="labelForm"/>
-                        </h:outputLabel>   
-                        <h:outputLabel value="Legendado:" for="sbcLegendado" style="width: 100px; margin-left: 30px; margin-top: 10px;" styleClass="labelForm"/>
-                        <h:selectBooleanCheckbox id="sbcLegendado" value="#{ccadastroFilme.filme.legendado}" styleClass="labelForm" style="margin-top: 10px;"/>
-                        <h:panelGroup layout="block" styleClass="clear"/>
-                        <h:panelGroup layout="block" styleClass="left">
-                            <h:inputText id="txiAnoLancamento" value="#{ccadastroFilme.filme.anoLancamento}" required="true" requiredMessage="Informe o Ano de Lançamento."
-                                         styleClass="inputForm" style="width: 130px;"/>
-                            <h:panelGroup>
-                                <p:calendar id="txiDataEstreia" label="Data de Estreia" value="#{ccadastroFilme.filme.dataEstreia}" navigator="true" showOn="button"
-                                            mask="true" pattern="dd/MM/yyyy" locale="pt" readonlyInput="true" styleClass="inputForm">
-                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
-                                </p:calendar>
-                                <script>
-                                    // ACERTA O TAMANHO DO CALENDAR PARA FUNCIONAR NO WIN XP COM CHROME
-                                    var pcal = $('#fcadastrofilme\\:txiDataEstreia_input');
-                                    if (pcal.length !== 0) {
-                                        pcal.css({"width": "130px"});
-                                        pcal.css({"margin-top": "2px"});
-                                    }
-                                </script>
-                            </h:panelGroup>
-                            <h:inputText id="txiDuracao" value="#{ccadastroFilme.filme.duracao}" required="true"
-                                         styleClass="inputForm" style="width: 150px;" requiredMessage="Informe a Duração"/>
-                            <h:inputText id="txiEstudio" value="#{ccadastroFilme.filme.estudio}" required="true"
-                                         styleClass="inputForm" style="width: 200px;" requiredMessage="Informe o Estúdio."/>
-                            <h:inputText id="txiIdioma" value="#{ccadastroFilme.filme.idioma}" required="true"
-                                         styleClass="inputForm" style="width: 150px;" requiredMessage="Informe o Idioma."/>
-                            <h:outputLabel value="Em Cartaz:" for="sbcEmCartaz" style="width: 100px; margin-left: 30px; margin-top: 10px;" styleClass="labelForm"/>
-                            <h:selectBooleanCheckbox id="sbcEmCartaz" value="#{ccadastroFilme.filme.emCartaz}" styleClass="labelForm"/>
-                        </h:panelGroup>
-                        <h:panelGroup layout="block" styleClass="clear"/>
-
-                        <h:outputLabel value="*" styleClass="labelFormRequired">
-                            <h:outputLabel value="Sinopse:" for="txaSinopse" styleClass="labelForm"/>
-                        </h:outputLabel>
-                        <h:panelGroup layout="block" styleClass="clear"/>
-                        <p:inputTextarea id="txaSinopse" rows="4" cols="200" autoResize="true" value="#{ccadastroFilme.filme.sinopse}"
-                                         styleClass="inputForm" maxlength="500" style="width: 98%;" required="true"
-                                         counter="display" counterTemplate="{0} caracteres restantes." requiredMessage="Informe a Sinopse."/>
-                        <h:panelGroup layout="block" styleClass="clear"/>
-                        <h:outputText id="display"/>
-                    </p:panel>
-                </h:panelGroup>
-
-                <h:panelGrid columns="1" style="margin-left: 45%;">
-                    <p:commandButton delay="300" value="Salvar" icon="icone_salvar_label" styleClass="buttonForm"
-                                     update=":fcadastrofilme:pngFgCadastroFilme :dlgMensagens" action="#{ccadastroFilme.salvar}"
-                                     process="@this :fcadastrofilme:pngFgCadastroFilme"/>
-                </h:panelGrid>
-                <h:panelGroup layout="block" styleClass="clear"/>
-            </p:panel>
-        </h:form>
-    </ui:define>
+            <h:panelGrid columns="1" style="margin-left: 45%;">
+                <p:commandButton delay="300" value="Salvar" icon="icone_salvar_label" styleClass="buttonForm"
+                                 update=":fcadastrofilme:pngFgCadastroFilme :dlgMensagens" action="#{ccadastroFilme.salvar}"
+                                 process="@this :fcadastrofilme:pngFgCadastroFilme"/>
+            </h:panelGrid>
+            <h:panelGroup layout="block" styleClass="clear"/>
+        </p:panel>
+    </h:form>
 </ui:composition>

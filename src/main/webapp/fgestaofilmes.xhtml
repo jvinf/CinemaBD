@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h:form id="fgfilmes" onkeypress="cancelaSubmitEventEnter(event);">
+        <h:panelGroup layout="block" styleClass="headerPanelFormFixed">
+            <h:panelGroup layout="block" styleClass="headerPanelForm">
+                <h:outputLabel value="Gestão &raquo;" styleClass="left labelHeaderPanelForm"/>
+                <h:outputLabel value="Filmes" styleClass="left labelHeaderPanelFormTitle" style="margin-left: 5px;"/>
+            </h:panelGroup>
+        </h:panelGroup>
+
+        <p:panel id="pnlFgFilmes" styleClass="panelForm">
+            <h:panelGroup id="pngFilmes">
+                <!--
+                <p:focus id="fcsPngFilmes" for="txiPesquisa"/>
+                <h:outputText value="Filtros de Pesquisa"/>
+                <p:panel id="pnlFiltros">
+                    <h:inputText id="txiPesquisa" style="width: 85%;" value="" autocomplete="off"
+                                 maxlength="100" styleClass="inputForm" onkeypress="onEnterClickButton(event, '#fgfilmes\\:btnPesquisar');">
+                    </h:inputText>
+                    <p:watermark for="txiPesquisa" value="Nome / Diretor / Gênero" id="watermark" />
+                    <p:commandButton id="btnPesquisar" value="Pesquisar" icon="icone_pesquisar_label" styleClass="buttonForm" style="margin-left: 1.1%" 
+                                     action="" update=":fgfilmes:pngDtRegistros :dlgMensagens" process=":fgfilmes:pnlFiltros"/>
+                </p:panel>
+                -->
+                <h:panelGroup id="pngDtRegistros">
+                    <p:dataTable id="dtRegistros" style="margin-top: 10px; white-space: nowrap;" styleClass="data_table" 
+                                 var="reg" value="#{cgestaoFilme.listaFilmes}" scrollable="true" scrollHeight="250"
+                                 paginator="true" rows="10" paginatorAlwaysVisible="false"
+                                 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                 selectionMode="single" selection="#{ccadastroFilme.filmeSel}" rowKey="#{reg.id}" emptyMessage="&nbsp;">
+                        <p:column headerText="Nome em Cartaz" width="150" sortBy="#{reg.nomeEmCartaz}">
+                            <h:outputText value="#{reg.nomeEmCartaz}" title="#{reg.nomeEmCartaz}"/>
+                        </p:column>
+                        <p:column headerText="Diretor(es)" width="100" sortBy="#{reg.nomeDiretor}">
+                            <h:outputText value="#{reg.nomeDiretor}" title="#{reg.nomeDiretor}"/>
+                        </p:column>
+                        <p:column headerText="Gênero" width="90" style="text-align: center" sortBy="#{reg.genero.descricao}">
+                            <h:outputText value="#{reg.genero.descricao}" title="#{reg.genero.descricao}"/>
+                        </p:column>
+                        <p:column headerText="Classificação" width="70" style="text-align: center" sortBy="#{reg.classificacao.descricao}">
+                            <h:outputText value="#{reg.classificacao.descricao}" title="#{reg.classificacao.descricao}"/>
+                        </p:column>
+                        <p:column headerText="Ano Lançamento" width="100" sortBy="#{reg.anoLancamento}" style="text-align: center">
+                            <h:outputText value="#{reg.anoLancamento}" title="#{reg.anoLancamento}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <h:outputText value="#{fn:length(cgestaoFilme.listaFilmes)} registro(s) encontrado(s)." />
+                        </f:facet>
+                    </p:dataTable>
+                </h:panelGroup>
+                <h:panelGrid columns="4" styleClass="right">
+                    <!--
+                    <p:commandButton value="Limpar" icon="icone_limpar_label" styleClass="buttonForm" action="" 
+                                     update=":fgfilmes:pngFilmes :dlgMensagens" process="@this" resetValues="true"/>
+                    -->
+                    <p:commandButton value="Incluir" icon="icone_incluir_label" styleClass="buttonForm" action="#{cgestaoFilme.incluir}" 
+                                     update=":pngPgFilmes :dlgMensagens" process="@this"/>
+                    <p:commandButton value="Alterar" icon="icone_alterar_label" styleClass="buttonForm" action="#{ccadastroFilme.alterar}" 
+                                     update=":pngPgFilmes :dlgMensagens" process="@this :fgfilmes:pngDtRegistros" 
+                                     actionListener="#{cgestaoFilme.incluir}"/>
+                    <p:commandButton value="Excluir" icon="icone_excluir_label" styleClass="buttonForm" action="#{ccadastroFilme.excluir}" 
+                                     update=":fgfilmes:pngDtRegistros :dlgMensagens" process="@this :fgfilmes:pngDtRegistros">
+                    </p:commandButton> 
+                </h:panelGrid>
+                <h:panelGroup layout="block" styleClass="clear"/>
+            </h:panelGroup>
+        </p:panel>
+    </h:form>
+</ui:composition>

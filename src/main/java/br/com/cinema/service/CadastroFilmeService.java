@@ -16,4 +16,8 @@ public class CadastroFilmeService implements Serializable {
     public Filme salvar(Filme filme) {
         return filmes.guardar(filme);
     }
+    
+    public void remover(Filme filme) {
+        filmes.removerFilme(filme);
+    }
 }
